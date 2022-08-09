@@ -1,0 +1,209 @@
+/* -------------------------------------------------------------------------- */
+/*                                info line                                */
+/* -------------------------------------------------------------------------- */
+
+.info-line > div
+  width: 21%
+
+.info-line
+  padding: 20px 0
+  .logo
+    width: 25%
+
+.phone
+  svg
+    width: 42px
+    height: 43px
+    fill: $primary
+
+.phone-list
+  margin-left: 19px
+  font-size: 1.8rem
+
+  li
+    margin-bottom: 8px
+    &:last-child
+      margin: 0
+  a
+    display: inline-block
+    color: $primary
+    transition: $trs
+    &:hover
+      transform: scale(1.1)
+
+.logo
+  img
+    width: 146px
+    margin-bottom: 9px
+  h1
+    font-size: 2.4rem
+    font-weight: 800
+    text-align: center
+    text-transform: uppercase
+    color: $primary
+
+.control
+  svg
+    fill: $primary
+    width: 42px
+    height: 43px
+
+.basket,
+.like
+    position: relative
+    transition: $trs
+    &:hover
+        transform: scale(1.1)
+    span
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 2
+        font-size: 1.4rem
+        color: $primary
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: -1
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background-color: $second
+            box-shadow: 0 0 4px #444
+            transform: translate(-50%, -50%)
+
+
+.lang-select .active-lang
+    a
+        color: #fff
+        &:hover
+            color: #fff
+
+/* -------------------------------------------------------------------------- */
+/*                                   nav bar                                  */
+/* -------------------------------------------------------------------------- */
+
+.menu
+  background-color: $primary
+  a
+    display: inline-block
+    font-size: 1.8rem
+    letter-spacing: 1px
+    color: $second
+    text-transform: uppercase
+    padding: 30px 0
+    transition: $trs
+    &:hover
+      background-color: $primary-hover
+      text-shadow: 0 0 1px $second
+
+a.burger-btn
+    position: relative
+    display: none
+    text-align: center
+
+.menu-text
+    padding-right: 50px
+
+.burger
+    position: absolute
+    top: calc( 50% - 2px )
+    left: calc( 50% + 15px )
+    width: 40px
+    height: 4px
+    border-radius: 2px
+    background: $second
+
+.burger:before
+    content: ''
+    position: absolute
+    top: 8px
+    left: 0
+    width: 40px
+    height: 4px
+    border-radius: 2px
+    background: $second
+
+.burger:after
+    content: ''
+    position: absolute
+    bottom: 8px
+    left: 0
+    width: 40px
+    height: 4px
+    border-radius: 2px
+    background: $second
+
+.close
+    position: fixed
+    display: none
+    z-index: 6
+    top: 50px
+    right: 50px
+    width: 50px
+    height: 50px
+    background-color: $primary
+    svg
+        width: 100%
+        height: 100%
+
+.burger-active
+    & + nav
+        position: fixed
+        z-index: 5
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        background-color: $primary
+        .close
+            display: block
+        ul
+            position: absolute
+            top: 50%
+            left: 50%
+            row-gap: 10px
+            width: 100%
+            transform: translate(-50%, -50%)
+            flex-direction: column
+            justify-content: center
+            li
+                min-width: 50%
+            a
+                padding: 5px 0
+                width: 100%
+                text-align: center
+
+.sub-menu-parent
+    position: relative
+    &:hover .sub-menu
+        display: block
+        opacity: 1
+
+.sub-menu
+    display: none
+    opacity: 0
+    padding: 30px
+    position: absolute
+    min-width: 250px
+    left: 50%
+    transform: translateX(-50%)
+    background: $second
+    z-index: 5
+    transition: $trs
+    a
+        display: block
+        margin-bottom: 15px
+        padding: 0 0 5px 0
+        color: $primary
+        border-bottom: 2px solid transparent
+        transition: $trs
+        &:last-child
+            margin-bottom: 0
+        &:hover
+            border-bottom: 2px solid $primary
+            background-color: transparent
+            text-shadow: none
+

@@ -1,0 +1,1118 @@
+@import helpers/vars
+
+*
+  margin: 0
+  padding: 0
+
+body
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+  padding-left: 15vw
+  padding-top: 45px
+
+.flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.flex-col
+  display: flex
+  flex-direction: column
+
+ul
+  list-style: none
+
+.uppercase
+  text-transform: uppercase
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   header                                   */
+/* -------------------------------------------------------------------------- */
+
+header
+  position: fixed
+  top: 0
+  left: 15vw
+  z-index: 2
+  width: 85vw
+  box-sizing: border-box
+  padding-right: 20px
+  color: #fff
+  background-color: $primary
+  a
+    color: #fff
+
+.header-menu
+  a
+    font-size: 16px
+    line-height: 24px
+    text-decoration: none
+    padding: 13px 20px
+    transition: .5s
+
+.header-menu li,
+.aside-menu li a
+  transition: .5s
+  &:hover
+    background-color: $primary-hover
+
+.li-add
+  a
+    display: inline-block
+    padding-left: 45px
+
+.add::before
+  content: ''
+  position: absolute
+  top: 50%
+  left: 20px
+  transform: translateY(-50%)
+  width: 17px
+  height: 17px
+  background-image: url('../img/add.svg')
+
+.li-add
+  position: relative
+
+.add-menu
+  position: absolute
+  left: 0
+  top: 50px
+  width: 150%
+  background-color: $primary
+  li, a
+    display: inline-block
+    width: 100%
+  a
+    padding: 15px 27px
+    box-sizing: border-box
+
+.focus
+  background-color: $primary-hover
+
+.hidden
+  display: none!important
+
+.lang-select
+  position: relative
+  display: flex
+  flex-direction: column
+  height: 32px
+  overflow: hidden
+  transition: .5s
+  a
+    text-decoration: none
+    line-height: 22px
+    padding: 5px 35px 5px 10px
+    transition: .5s
+    &:hover
+      background-color: $primary-hover
+    span
+      margin-left: 5px
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    right: 10px
+    width: 10px
+    height: 10px
+    border: 2px solid #fff
+    border-top: none
+    border-left: none
+    transform: rotate(45deg) translate(-75%, -50%)
+  &:hover
+    cursor: pointer
+
+.selected-lang
+  order: -1
+
+.active-select
+  overflow: visible
+  background-color: $primary-hover
+  a
+    background-color: $primary
+    &:first-child
+      background-color: $primary-hover
+
+/* -------------------------------------------------------------------------- */
+/*                                 aside menu                                 */
+/* -------------------------------------------------------------------------- */
+
+aside
+  position: fixed
+  top: 0
+  left: 0
+  width: 15vw
+  height: 100vh
+  background-color: $primary
+  nav, ul, li, a
+    width: 100%
+  a
+    display: inline-block
+    font-size: 16px
+    color: #fff
+    text-decoration: none
+    padding: 15px 30px
+    box-sizing: border-box
+  li
+    position: relative
+    &:hover
+      span
+        transform: scale(1)
+
+.logo
+  transition: .5s
+  margin-right: 30px
+  a
+    padding: 7.5px 0
+    justify-content: center
+  img
+    height: 35px
+  &:hover
+    transform: scale(1.15)
+
+.aside-menu
+    max-height: 80vh
+    overflow-x: hidden
+    overflow-y: scroll
+    a
+        position: relative
+        padding-left: 54px
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 30px
+            width: 24px
+            height: 24px
+            transform: translate(-50%, -50%)
+    .drop-list
+        background-color: $primary-hover
+        a:hover
+            background-color: #00255c
+
+.product-btn
+    &::before
+        background-image: url(../img/product.svg)
+.services-btn
+    &::before
+        background-image: url(../img/services.svg)
+.orders-btn
+    position: relative
+    &::before
+        background-image: url(../img/category.svg)
+.news-btn
+    &::before
+        background-image: url(../img/new.svg)
+.module-btn
+    &::before
+        background-image: url(../img/module.svg)
+.seo-btn
+    &::before
+        background-image: url(../img/seo.svg)
+.trash-btn
+    &::before
+        background-image: url(../img/trash_box.svg)
+.analitics-btn
+    &::before
+        background-image: url(../img/graph.svg)
+
+.selected-item
+    position: relative
+    background-color: $primary-hover
+    &::after
+        content: ''
+        position: absolute
+        z-index: 3
+        top: 0%
+        left: 0
+        width: 6px
+        height: 100%
+        background-color: #D9D9D9
+
+.copy
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 15vw
+  background-color: $primary
+  img
+    width: 100%
+    height: 60px
+  a
+    justify-content: start
+    color: #999
+    span
+      margin-left: 10px
+
+.link-text-drop-list
+    font-size: 15px
+
+/* -------------------------------------------------------------------------- */
+/*                                    main                                    */
+/* -------------------------------------------------------------------------- */
+
+main
+  padding: 20px
+
+/* -------------------------------------------------------------------------- */
+/*                            product list (index)                            */
+/* -------------------------------------------------------------------------- */
+.list-filter-wrapp
+    display: flex
+    align-items: start
+    justify-content: space-between
+
+.title-line
+  padding-bottom: 10px
+  margin-bottom: 20px
+  border-bottom: 1px solid #000
+
+.add-button
+  display: inline-block
+  position: relative
+  width: 35px
+  height: 35px
+  background-color: $primary
+  border: none
+  transition: .5s
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: .5s
+  &:hover
+    background-color: $primary-hover
+    img
+      transform: translate(-50%, -50%) scale(1.1)
+
+.y
+    width: 75%
+
+
+.product-table
+  width: 100%
+  border-collapse: collapse
+  thead tr
+    background-color: #D9D9D9
+  tbody
+    tr
+      transition: .5s
+      &:nth-child(even)
+        background-color: #D9D9D9
+      &:nth-child(odd)
+        background-color: #BEBEBE
+      &:hover
+        background-color: #acacac
+
+  td, th
+    padding: 15px
+
+.product-image
+  width: 75px
+  img
+    width: 100%
+
+
+.action
+  text-align: center
+  a
+    position: relative
+    display: inline-block
+    width: 24px
+    height: 24px
+    background-color: $primary
+    transition: .5s
+    &:hover
+      background-color: $primary-hover
+    &:last-child
+      background-color: #cb0000
+      &:hover
+        background-color: #a00000
+      &::before
+        background-image: url(../img/delete.svg)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-image: url(../img/edit.svg)
+      background-position: center
+      background-repeat: no-repeat
+
+.restore
+  text-align: center
+  a
+    position: relative
+    display: inline-block
+    width: 24px
+    height: 24px
+    background-color: $primary
+    transition: .5s
+    &:hover
+      background-color: $primary-hover
+    &:last-child
+      background-color: #cb0000
+      &:hover
+        background-color: #a00000
+      &::before
+        background-image: url(../img/delete.svg)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-image: url(../img/restore_from_trash.svg)
+      background-position: center
+      background-repeat: no-repeat
+
+/* -------------------------------------------------------------------------- */
+/*                               product create                               */
+/* -------------------------------------------------------------------------- */
+
+.create-list
+  justify-content: flex-start
+  width: 100%
+  background-color: #D9D9D9
+  a
+    display: inline-block
+    font-size: 16px
+    line-height: 20px
+    color: #000
+    text-decoration: none
+    padding: 10px 30px
+    transition: .5s
+    &:hover
+      background-color: #B4B4B4
+
+.current-btn
+  background-color: #B4B4B4
+
+.current-slide-wrap
+  display: inline-block
+  background-color: #B4B4B4
+  padding: 40px 30px 50px
+  box-sizing: border-box
+  & > div
+    display: none
+  .current-slide
+    display: flex
+
+.flex-col
+    & > .input-wrap
+        &:last-child
+            padding-bottom: 0
+
+
+.input-wrap
+  position: relative
+  padding: 30px 0 20px
+  input:not([type=radio]),
+  textarea,
+  select
+    width: 400px
+    font-size: 16px
+    padding: 10px 15px
+    border: none
+    background-color: #D9D9D9
+    box-sizing: border-box
+  textarea
+    width: 800px
+  .label
+    position: absolute
+    top: 0
+    left: 0
+  & > p
+    margin-bottom: 10px
+
+.size-price-slide
+    .input-wrap
+        input,
+        select
+            width: 450px
+
+.size-price
+    &>div
+        padding: 20px 0
+        border-top: 3px dashed $primary
+        &:last-child
+            border-bottom: 3px dashed $primary
+
+.size-price-bt-wrap
+    display: flex
+    justify-content: center
+    padding: 20px 0 0 0
+
+.size-price-bt-pl,
+.size-price-bt-min
+    font-size: 1rem
+    font-weight: bold
+    cursor: pointer
+    width: 250px
+    padding: 0 15px
+    text-align: center
+    text-transform: uppercase
+    background-color: #003b95
+    border: none
+    color: #fff
+    transition: 0.5s
+    &:hover
+        background-color: #1255bc
+
+.size-price-bt-min
+    background-color: #940000
+    &:hover
+        background-color: #cb0000
+
+
+.btn-w-sp
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+.mr-seo-input
+    margin-right: 20px
+
+.seo-textarea-wrap
+    width: 400px
+
+.seo-textarea
+    width: 370px
+    padding: 15px
+    border: none
+    height: 200px
+    background-color: #D9D9D9
+    font-size: 16px
+    margin-top: 15px
+    margin-bottom: 20px
+    resize: none
+
+
+.mass-netto
+    margin-bottom: 25px
+
+.mass-netto-checkbox
+    display: none
+
+
+.mass-netto-label
+    font-size: 14px
+    cursor: pointer
+    box-sizing: border-box
+    text-align: center
+    display: block
+    text-transform: uppercase
+    padding: 5px
+    background-color: #F2F2F2
+    margin-bottom: 15px
+    padding: 15px
+    width: 100%
+    transition: 0.5s
+    &:hover
+        box-shadow: 0px 0px 10px #003b95
+
+.mass-netto-checkbox:checked + .mass-netto-label
+    background-color: $primary
+    color: #fff
+    box-shadow: 0px 0px 10px #003b95
+    transition: 0.5s
+
+/* -------------------------------------------------------------------------- */
+/*                               product update                               */
+/* -------------------------------------------------------------------------- */
+
+.image-changes
+    text-align: center
+    display: inline-block
+    cursor: pointer
+    margin-bottom: 15px
+
+.old-image
+    width: 500px
+    transition: 0.5s
+
+.image-changes-desc
+    text-align: center
+    margin-bottom: 15px
+
+.image-changes-bt
+    width: 100%
+    text-align: center
+    padding: 10px
+    cursor: pointer
+    font-size: 16px
+    background-color: #003b95
+    border: none
+    color: #fff
+    transition: 0.5s
+    &:hover
+        background-color: #1255bc
+
+
+
+.image-changes-form
+    display: none
+
+.radio-change
+    display: none
+
+.radio-label
+    cursor: pointer
+    margin-left: 10px
+    display: flex
+    flex-direction: row
+    align-items: center
+    padding: 5px
+    background-color: #F2F2F2
+    border-radius: 50px
+    margin-bottom: 15px
+    transition: 0.5s
+    &:hover
+        box-shadow: 0px 0px 10px #003b95
+
+.radio-change:checked + .radio-label
+    padding: 5px
+    background-color: #D9D9D9
+    box-shadow: 0px 0px 10px #003b95
+    transition: 0.5s
+    .label-circle
+        background-color: #003b95
+        border: 1px solid rgba(0, 0, 0, 0.0)
+
+.label-circle
+    display: block
+    width: 8px
+    height: 8px
+    border-radius: 50px
+    border: 1px solid #cccccc
+    margin-left: 10px
+    flex-shrink: 0
+
+.label-desc
+    display: block
+    font-size: 13px
+    margin-left: 10px
+    margin-right: 10px
+
+.flex-space
+    display: flex
+
+.sub-category-wrap
+    flex-wrap: wrap
+    width: 400px
+
+.pt0
+    padding-top: 0
+
+/* -------------------------------------------------------------------------- */
+/*                                   pagination                               */
+/* -------------------------------------------------------------------------- */
+
+.pagination
+    padding: 25px 0
+
+/* -------------------------------------------------------------------------- */
+/*                                   filter                                   */
+/* -------------------------------------------------------------------------- */
+
+.filter-form
+    width: 20%
+    background-color: #D9D9D9
+    padding: 15px
+
+.filter-item-checkbox
+    display: none
+
+.filter-item
+    margin-bottom: 20px
+
+.filter-item-title
+    text-align: center
+    font-weight: bold
+
+.filter-item-desc,
+.filter-item-title
+    margin-bottom: 15px
+
+.filter-item-desc
+    display: block
+    padding: 5px 0
+    border-bottom: 1px solid #676767
+
+.filter-item-label
+    cursor: pointer
+    margin-left: 10px
+    display: inline-flex
+    flex-direction: row
+    align-items: center
+    padding: 5px
+    background-color: #F2F2F2
+    border-radius: 50px
+    margin-bottom: 15px
+    transition: 0.5s
+    &:hover
+        box-shadow: 0px 0px 10px #003b95
+
+.filter-item-checkbox:checked + .filter-item-label
+    padding: 5px
+    background-color: #D9D9D9
+    box-shadow: 0px 0px 10px #003b95
+    transition: 0.5s
+    .label-circle
+        background-color: #003b95
+        border: 1px solid rgba(0, 0, 0, 0.0)
+
+.filter-setting-button
+    text-align: center
+
+.filter-item-button-button
+    display: none
+
+.filter-item-button-label
+    width: 100%
+    text-align: center
+    padding: 10px
+    cursor: pointer
+    font-size: 16px
+    background-color: #003b95
+    border: none
+    color: #fff
+    &:hover
+        background-color: #1255bc
+
+::-webkit-scrollbar
+    width: 0
+
+::-webkit-scrollbar-track
+    background: #003b95
+
+::-webkit-scrollbar-thumb
+    background: #1d5dbe
+    height: 100px
+
+::-webkit-scrollbar-thumb:hover
+    background: #003b95
+
+/* -------------------------------------------------------------------------- */
+/*                                   seo                                      */
+/* -------------------------------------------------------------------------- */
+// .dev-wrap
+//     text-align: center
+
+// .to-dev
+//     height: 87vh
+//     display: flex
+//     justify-content: center
+//     align-items: center
+
+// .to-dev-img
+//     width: 200px
+//     fill: #E6E6E6
+
+// .to-dev-desc
+//     text-align: center
+//     font-weight: bold
+//     font-size: 26px
+//     text-transform: uppercase
+//     color: #E6E6E6
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  error                                     */
+/* -------------------------------------------------------------------------- */
+.error
+    display: flex
+    flex-wrap: wrap
+
+.error-item
+    display: flex
+    align-items: center
+    padding: 2px 4px
+    background: #ff3c3c
+    margin: 3px 3px
+    border-radius: 50px
+
+.error-icon
+    width: 30px
+    stroke: #fff
+    fill: #fff
+    margin-right: 10px
+
+.error-desc
+    font-size: 12px
+    color: #fff
+    margin-right: 10px
+    text-transform: uppercase
+
+/* -------------------------------------------------------------------------- */
+/*                                  modulus                                   */
+/* -------------------------------------------------------------------------- */
+.header-modulus,
+.footer-modulus
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    margin-bottom: 75px
+    div
+        width: 30%
+        max-width: 30%
+
+.header-modulus
+    margin-bottom: 50px
+    img
+        width: 150px
+
+.sliders-box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    margin-bottom: 50px
+    .slider
+        margin-bottom: 25px
+        width: 45%
+        height: 75px
+        background: #D9D9D9
+        transition: .5s
+        position: relative
+        &:hover
+            background: #B4B4B4
+            cursor: pointer
+        svg
+            width: 50px
+            margin-right: 15px
+        .svg-fish
+            width: 90px
+        .svg-goods
+            width: 40px
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+            position: absolute
+            width: 100%
+            height: 100%
+            text-decoration: none
+            color: black
+            font-size: 22px
+            transition: .5s
+
+
+.models-h3,
+.models-p
+    background: #003b95
+    color: white
+    padding: 10px
+    text-align: center
+
+.models-h3
+    margin-bottom: 20px
+
+.models-p
+    margin-bottom: 0
+
+.models-slider-option
+    background: grey
+    color: white
+
+.box-slider-page
+    margin-bottom: 75px
+    form:first-child
+        display: flex
+        justify-content: space-around
+        padding: 40px 30px 50px
+        background-color: #B4B4B4
+        box-sizing: border-box
+
+
+.image-slider-page
+    max-width: 45%
+    img
+        max-width: 400px
+        min-width: 400px
+        max-height: 400px
+        object-fit: contain
+
+.update-text-slider-page
+    display: flex
+    flex-direction: column-reverse
+    justify-content: flex-end
+    font-size: 18px
+    max-width: 45%
+    .input-wrap
+        input
+            font-size: 16px
+
+.slider-page-actions-btn
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 10px
+    a
+        margin-right: 10px
+        position: relative
+        display: inline-block
+        width: 35px
+        height: 35px
+        transition: .5s
+        background-color: #cb0000
+        background-image: url(/img/delete.svg)
+        background-repeat: no-repeat
+        background-position: center
+        &:hover
+            background-color: #a00000
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  services-order                            */
+/* -------------------------------------------------------------------------- */
+.aside-menu-item
+    display: flex
+    justify-content: space-between
+    text-align: center
+    align-items: center
+
+.order-circle-counter
+    flex-shrink: 0
+    text-align: center
+    display: inline-block
+    font-weight: bold
+    border-radius: 50px
+    display: inline-block
+    color: #fff
+    width: 20px
+    height: 20px
+    background: #20a100
+    span
+        display: inline-block
+        padding-top: 2px
+
+.trash-circle-counter
+    flex-shrink: 0
+    text-align: center
+    font-weight: bold
+    border-radius: 50px
+    display: inline-block
+    color: #fff
+    width: 20px
+    height: 20px
+    background: #9d0000
+    margin-left: 15px
+    span
+        display: inline-block
+        padding-top: 2px
+
+
+.service-radio-wrap
+    display: inline-block
+    background: #ccc
+
+.contacts-custom
+    display: flex
+
+    .contacts-custom-desc,
+    .contacts-custom-item
+        margin-right: 25px
+        margin-bottom: 25px
+        p
+            margin-bottom: 15px
+    .contacts-custom-item
+        p
+            font-weight: bold
+
+.contacts-custom-interes
+    p
+        margin-bottom: 15px
+        &:last-child
+            margin-bottom: 50px
+            background: #fff
+            padding: 15px
+
+.services-order-form
+    button
+        padding: 15px
+        cursor: pointer
+
+.services-order-wrapper
+    padding: 25px
+    background: #B0C4DE
+    select
+        cursor: pointer
+        padding: 15px
+
+.order-status,
+.order-status-one
+    p
+        color: #fff
+        font-weight: bold
+        text-align: center
+        padding: 5px
+        font-size: 12px
+        text-transform: uppercase
+        border-radius: 50px
+
+
+.order-status
+    p
+        background: #20a100
+
+.order-status-one
+    p
+        background: $primary
+
+/* -------------------------------------------------------------------------- */
+/*                                  product-order                           */
+/* -------------------------------------------------------------------------- */
+
+.order-product-img
+    width: 100px
+
+.order-product-wrapper
+    display: flex
+
+.contacts-table-wrap
+    padding: 25px
+    background: #ccc
+    width: 30%
+
+.order-list-wrap
+    padding: 25px
+    background: #A8A8A8
+
+.contacts-table
+    width: 100%
+    margin-bottom: 25px
+    td
+        padding: 5px 0
+
+.table-desc
+    font-size: 18px
+    font-weight: bold
+    padding-bottom: 30px
+
+.order-list-table
+    .table-desc-item
+        padding-bottom: 25px
+        padding-right: 25px
+    td
+        padding: 5px 0
+
+    .table-desc-total-price
+        padding-right: 25px
+        padding-top: 25px
+
+.table-desc-contact
+    font-weight: bold
+
+
+.order-select-wrap
+    select
+        width: 100%
+        padding: 10px
+        margin-bottom: 15px
+
+.order-product-form
+    button
+        display: block
+        width: 100%
+        padding: 10px
+    p
+        margin-bottom: 10px
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  pdf                                         */
+/* -------------------------------------------------------------------------- */
+.pdf-changes
+    cursor: pointer
+    background: $primary
+    color: #fff
+    margin-bottom: 15px
+    text-align: center
+    padding: 10px
+    transition: 0.3s
+    &:hover
+        background: $primary-hover
+
+.certificate
+    padding: 10px
+    text-align: center
+    background: #ccc
+    color: #000
+.certificate-desc
+    text-transform: uppercase
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  dashbord                                         */
+/* -------------------------------------------------------------------------- */
+.dashbord-wraper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding-top: 15px
+
+.dashbord-wraper-block
+    width: 49%
+    text-align: center
+
+.wraper-box
+    border: solid 1px #ccc
+    margin-bottom: 25px
+    a
+        display: inline-block
+        text-decoration: none
+        box-sizing: border-box
+        padding: 10px
+        width: 100%
+        color: #000
+        background: #ccc
+        transition: 0.2s
+        &:hover
+            background: $primary-hover
+            color: #fff
+
+.dashbord-wraper-block-desc
+    background: $primary
+    padding: 15px 0
+    color: #fff
+    font-size: 18px
+
+
+.dashbord-wraper-block-count
+    font-size: 26px
+    padding: 15px
+    span
+        display: inline-block
+        padding: 5px 12px
+
+
+.plus-order
+    span
+        display: inline-block
+        background: #20a100
+        border-radius: 50px
+        color: #fff
+
+.wraper-box-flex
+    background: $primary
+    p
+        width: 49%
+        color: #fff
+
+.wraper-box-flex,
+.wraper-box-flex-count
+    font-size: 18px
+    display: flex
+    padding: 15px
+    justify-content: space-between
+
+.wraper-box-flex-count
+    p
+        width: 49%
+        font-size: 26px
+
+

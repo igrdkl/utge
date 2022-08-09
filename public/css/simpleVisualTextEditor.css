@@ -1,0 +1,67 @@
+.content {
+  padding: 20px 0;
+}
+
+#editControls1,
+#editControls2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 5px
+}
+
+.btn-group {
+  margin: 0 5px;
+}
+
+.btn-group,
+.btn {
+  display: inline-block;
+  padding: 3px 5px;
+  border: 1px solid silver;
+  border-radius: 3px;
+}
+
+.btn {
+  color: #333;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.btn:hover {
+  background-color: #eee;
+}
+
+#editor1,
+#editor2,
+#desc_uk,
+#desc_ru{
+  display: block;
+  resize: vertical;
+  overflow: auto;
+  padding: 15px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  min-height: 300px;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.3);
+  background: #fff;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#editor1 table,
+#editor2 table {
+  border-collapse: collapse;
+}
+
+#editor1 td,
+#editor2 td {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+#desc_uk,
+#desc_ru{
+  display: none;
+}

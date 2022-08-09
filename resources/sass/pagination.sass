@@ -1,0 +1,106 @@
+@import helpers/vars
+
+/* -------------------------------------------------------------------------- */
+/*                                   pagination                                 */
+/* -------------------------------------------------------------------------- */
+.pagination
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+
+.slider-nav
+    max-width: 190px
+    overflow: hidden
+    p
+        flex: 0 0 20px
+
+.page-count:not(.active)
+    transition: $trs
+    &:hover
+        background-color: #003c9562
+        cursor: pointer
+
+.page-count,
+.hidden-page-count
+    background-color: $second
+    border: 1px solid $primary
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 100px
+    margin: 8px
+
+.hidden-page-count
+    visibility: hidden
+
+.page-link-previous
+    margin-right: 30px
+
+.page-link-next
+    margin-left: 30px
+
+.page-link-previous,
+.page-link-next
+    position: relative
+    background-color: $primary
+    display: block
+    width: 50px
+    height: 50px
+    border-radius: 100px
+    text-align: center
+    align-items: center
+    transition: $trs
+    &:hover
+        transform: scale(1.1)
+        cursor: pointer
+
+.active
+    background-color: $primary
+
+.page-link-a-previous,
+.page-link-a-next
+    position: relative
+    display: block
+    width: 100%
+    height: 100%
+
+.page-link-previous::before,
+.page-link-next::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-position: center
+    background-repeat: no-repeat
+
+.page-link-a-next::before,
+.page-link-next::before
+    background-image: url(../img/navigate_l.svg)
+    transform: rotate(180deg)
+
+.page-link-a-previous::before,
+.page-link-previous::before
+    background-image: url(../img/navigate_l.svg)
+
+@media screen and ( max-width:  450px)
+    .page-link-previous
+        margin-right: 10px
+
+    .page-link-next
+        margin-left: 10px
+
+    .slider-nav
+        max-width: 150px
+        p
+            margin: 0 4px
+
+
+
+
+
+
+
+

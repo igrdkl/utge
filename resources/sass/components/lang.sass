@@ -1,0 +1,61 @@
+.lang-select
+  position: relative
+  display: flex
+  flex-direction: column
+  height: 38px
+  overflow: hidden
+  border-radius: 8px
+  transition: $trs
+  a
+    color: $primary
+    font-size: 2.4rem
+    text-decoration: none
+    padding: 5px 35px 5px 10px
+    transition: $trs
+    &:hover
+      color: $second
+      background-color: $primary-hover
+    span
+      margin-left: 5px
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    right: 10px
+    width: 10px
+    height: 10px
+    border: 2px solid $primary
+    border-top: none
+    border-left: none
+    transition: $trs
+    transform: rotate(45deg) translate(-75%, -50%)
+  &:hover
+    cursor: pointer
+    &::before
+      border-color: $second
+
+.control
+  .flag
+    height: 18px
+  .str
+    width: 21px
+    height: 12px
+
+.active-select
+  overflow: visible
+  background-color: $primary-hover
+  &::before
+    border-color: $second
+  a
+    color: $second
+    background-color: $primary
+    border-radius: 0 0 8px 8px
+    &:last-child
+      border-radius: 8px
+  .selected-lang
+    border-radius: 8px 8px 0 0
+    background-color: $primary-hover
+
+a.selected-lang
+  order: -1
+  border-radius: 8px
